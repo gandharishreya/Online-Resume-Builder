@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .header h2 {
+        margin: 0;
+    }
+    .header p {
+        margin: 5px 0;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section h3 {
+        margin-bottom: 10px;
+    }
+    .section p {
+        margin: 5px 0;
+    }
+    .download-btn {
+        display: block;
+        width: 150px;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor:pointer;
+
+
+    }
+    @media print {
+        .download-btn {
+            display: none;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container" id="resumeOutput"></div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<script>
+// Retrieve the resume content from localStorage
+var resumeContent = localStorage.getItem('resumeContent');
+
+// Display the resume content
+document.getElementById("resumeOutput").innerHTML = resumeContent;
+
+// Function to generate PDF and download it
+
+    
+
+
+</script>
+<!--<a href="#" id="downloadBtn" class="download-btn">Download PDF</a>-->
+<button onclick="window.print();" id="downloadBtn" class="download-btn" >Download</button>
+</body>
+</html>

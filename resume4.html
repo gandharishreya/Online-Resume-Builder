@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        overflow: hidden; /* Ensures proper containment */
+        display: flex;
+        justify-content: space-between;
+    }
+    .left {
+        width: 35%;/* Width for left side */
+        float: left;
+        border-right: 2px solid #000;
+    }
+    .right {
+        width: 45%; /* Width for right side */
+        float: right;
+    }
+    h1 {
+        margin-top: 0;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    .section-header {
+        font-weight: bold;
+        margin-top: 0;
+    }
+    /* Adjustments for preventing overlapping */
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input,
+    textarea {
+        width: calc(100% - 10px); /* Adjust input width to fit the container */
+        margin-bottom: 10px;
+    }
+    button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <form id="resumeForm">
+<div class="container">
+    <div class="left">
+        <h1>Resume Builder</h1>
+
+        <!-- Input fields for user information -->
+        <div class="section">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+        
+        <div class="section">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="section">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="education section">
+            <h2 class="section-header">Education:</h2>
+            <textarea id="education" name="education" rows="4"></textarea>
+        </div>
+        <div class="skills section">
+            <h2 class="section-header">Skills:</h2>
+            <textarea id="skills" name="skills" rows="4"></textarea>
+        </div>
+    </div>
+    <div class="right">
+        <div class="courseSummary  section">
+            <h2 class="section-header">Course Summary:</h2>
+            <textarea id="courseSummary" name="courseSummary" rows="4"></textarea>
+        </div>
+        <div class="work-experience section">
+            <h2 class="section-header">Work Experience:</h2>
+            <textarea id="workExperience" name="workExperience" rows="4"></textarea>
+        </div>
+        
+        <div class="languages section">
+            <h2 class="section-header">Languages:</h2>
+            <textarea id="languages" name="languages" rows="4"></textarea>
+        </div>
+        <div class="accomplishments section">
+            <h2 class="section-header">Accomplishments:</h2>
+            <textarea id="accomplishments" name="accomplishments" rows="4"></textarea>
+        </div>
+    </div>
+</div>
+<button type="button" onclick="generateResume()">Generate Resume</button>
+</form>
+<script>
+    // Function to generate the resume
+    function generateResume() {
+        // Retrieve values from form fields
+        var fullName = document.getElementById("fullName").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var skills = document.getElementById("skills").value;
+        var courseSummary = document.getElementById("courseSummary").value;
+        var workExperience = document.getElementById("workExperience").value;
+        var education = document.getElementById("education").value;
+        var languages = document.getElementById("languages").value;
+        var accomplishments = document.getElementById("accomplishments").value;
+
+
+        var resumeContent = `
+        
+        <div class="container">
+    <!-- Left side -->
+   
+    
+    <div class="left">
+        <h1>${fullName}</h1>
+        <p>${email}</p>
+        <p>${phone}</p>
+        <h2>Education:</h2>
+        <p>${education}</p>
+        
+        <h2>Skills:</h2>
+        <p>${skills}</p>
+    </div>
+
+    <!-- Right side -->
+    <div class="right">
+        <h2>Course Summary:</h2>
+        <p>${courseSummary}</p>
+
+
+        <h2>Work Experience:</h2>
+        <p>${workExperience}</p>
+
+      
+
+        <h2>Languages:</h2>
+        <p>${languages}</p>
+
+        <h2>Accomplishments:</h2>
+        <p>${accomplishments}</p>
+
+
+        <!-- You can add more sections for languages, accomplishments, etc. -->
+    </div>
+</div>
+          
+        `;
+
+        localStorage.setItem('resumeContent', resumeContent);
+
+    // Redirect to the resume display page
+    window.location.href = 'resume-display1.html';
+
+    
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+    }
+    form {
+        margin-bottom: 20px;
+    }
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+<div class="container" >
+    <h1>Resume Builder</h1>
+    <form id="resumeForm">
+        <!-- Input fields for user information -->
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+        <label for="summary">Summary:</label>
+        <textarea id="summary" name="summary" rows="4"></textarea><br><br>
+        <label for="workExperience">Work Experience:</label>
+        <textarea id="workExperience" name="workExperience" rows="4"></textarea><br><br>
+
+        <!-- Input fields for education -->
+        <label for="education">Education:</label>
+        <textarea id="education" name="education" rows="4"></textarea><br><br>
+
+        <!-- Input fields for skills -->
+        <label for="skills">Skills:</label>
+        <textarea id="skills" name="skills" rows="4"></textarea><br><br>
+
+        <label for="accomplishments">Accomplishments:</label>
+        <textarea id="accomplishments" name="accomplishments" rows="4"></textarea><br><br>
+
+        <label for="certificates">Certificates:</label>
+        <textarea id="certificates" name="certificates" rows="4"></textarea><br><br>
+
+        <!-- Input fields for languages -->
+        <label for="languages">Languages:</label>
+        <textarea id="languages" name="languages" rows="4"></textarea><br><br>
+
+        <button type="button" onclick="generateResume()">Generate Resume</button>
+    </form>
+        <!-- Input fields for work experience, education, skills, languages -->
+        <!-- Add your input fields here -->
+        
+      
+</div>
+
+
+<script>
+function generateResume() {
+    // Get user input from form fields
+    var fullName = document.getElementById("fullName").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    // Collect other user input fields
+    var summary = document.getElementById("summary").value;
+    var workExperience = document.getElementById("workExperience").value;
+    var education = document.getElementById("education").value;
+    var skills = document.getElementById("skills").value;
+    var accomplishments = document.getElementById("accomplishments").value;
+    var certificates = document.getElementById("certificates").value;
+    var languages = document.getElementById("languages").value;
+    // Create the resume content dynamically
+    var resumeContent = `
+        <div class="resume">
+            <div class="header">
+                <h2>${fullName}</h2>
+                <p>Email: ${email}</p>
+                <p>Phone: ${phone}</p>
+            </div> <hr>
+            <div class="section">
+                <h3>Work Experience</h3>
+                <p>${workExperience}</p>
+            </div>
+            <div class="section">
+                <h3>Education</h3>
+                <p>${education}</p>
+            </div>
+            <div class="section">
+                <h3>Skills</h3>
+                <p>${skills}</p>
+            </div>
+            <div class="section">
+                <h3>Accomplishments</h3>
+                <p>${accomplishments}</p>
+            </div>
+            <div class="section">
+                <h3>Certificates</h3>
+                <p>${certificates}</p>
+            </div>
+            <div class="section">
+                <h3>Languages</h3>
+                <p>${languages}</p>
+            </div>
+           
+        
+            <!-- Include sections for work experience, education, skills, languages -->
+            <!-- Customize the format and content of the resume -->
+        </div>
+    `;
+
+    
+
+    // Store the resume content in localStorage
+    localStorage.setItem('resumeContent', resumeContent);
+
+    // Redirect to the resume display page
+    window.location.href = 'resume-display.html';
+}
+</script>
+
+</body>
+</html>

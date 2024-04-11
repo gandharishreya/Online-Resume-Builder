@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        
+        display: flex;
+        justify-content: space-between; /* Space between left and right sides */
+    }
+    
+    .left {
+        width: 30%;
+        float: left;
+        padding-right: 20px;/* Add some spacing to the right */
+        
+        box-sizing: border-box;
+    }
+    .right {
+        width: 45%;
+        float: right;
+        border-left: 2px solid #000; /* Add a border to separate the left and right sides */
+        padding-left: 20px; /* Add some spacing to the left */
+        box-sizing: border-box;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    h1 {
+        margin-top: 0;
+        text-align: center;
+    }
+    .section h2 {
+        margin-bottom: 10px;
+    }
+    .section p {
+        margin: 5px 0;
+    }
+    
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .download-btn {
+        display: block;
+        width: 150px;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor:pointer;
+
+
+    }
+    @media print {
+        .download-btn {
+            display: none;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container" id="resumeOutput"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<script>
+    // Retrieve the resume content from localStorage
+    var resumeContent = localStorage.getItem('resumeContent');
+    
+    // Display the resume content
+    document.getElementById("resumeOutput").innerHTML = resumeContent;
+</script>
+
+<button onclick="window.print();" id="downloadBtn" class="download-btn">Download</button>
+
+</body>
+</html>

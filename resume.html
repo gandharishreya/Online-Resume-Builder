@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title> Online Resume Builder</title>
+        <style>
+            body{
+                background-image: url('g1.webp');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 100%;
+            }
+            .column {
+                float: center;
+                width: 33.33%;
+                padding: 5px;
+            }
+
+            /* Clear floats after image containers */
+            .row {
+                content: "";
+                display: flex;
+            }
+            .but{
+                background-color: blue;
+                color:azure;
+                padding: 5px 15px;
+                text-align: center;
+                font-size: 12px;
+                width: 35%;
+                border-width: 3px ;
+                border-color: black;
+                border-radius: 5px;
+                min-width: 30px;
+                position:relative;
+            }
+            .but:hover{
+                background-color: blueviolet;
+                transition: 0.7s;
+            }
+
+            .but:focus{
+                outline-color: black;
+                outline-style: solid;
+                box-shadow: 0 0 4px wheat;
+                transition: 0.7s;
+            }
+
+            .but:active{
+                background-color: crimson;
+            }
+        </style>
+    </head>
+    <body align="center"><br>
+        <h1 align="center"> Welcome to Resume Builder </h1> &nbsp;
+        <h2> Resume Templates</h2> &nbsp; &nbsp;
+
+        <img src="real1.png" alt="Snow" style="width:30%"> 
+        <a href="resume3.html" target="_blank"> &nbsp; &nbsp;
+            <button type="button" class="but">Create Resume</button>
+        </a>
+        <br>
+        <img src="r2.png" alt="Forest" style="width:30%">
+        <a href="resume4.html" target="_blank"> &nbsp; &nbsp;
+            <button type="button" class="but">Create Resume</button>
+        </a>
+        <br>
+        <img src="r1.png" alt="Mountains" style="width:30%">
+        <a href="build3.html" target="_blank"> &nbsp; &nbsp;
+            <button type="button" class="but">Create Resume</button>
+        </a>
+    </body>
+</html>
